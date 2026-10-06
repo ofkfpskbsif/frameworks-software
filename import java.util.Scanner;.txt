@@ -1,0 +1,147 @@
+     import java.util.Scanner;
+import java.util.Random;
+
+class Main {
+    public static void main(String[] args) {
+
+        int oro = 0;
+        int comida = 100;
+        int energia = 100;
+        int agua = 100;
+        int dias = 0;
+            
+        Scanner myObj = new Scanner(System.in);
+        Random random = new Random();
+
+        System.out.println("*******************************************");
+        System.out.println("La alocada aventura de Cristof y sus amigos");
+        System.out.println("*******************************************");
+        System.out.println("Tienes que sobrevivir 10 dias con recursos limitados");
+
+        for (dias = 0; dias < 10; dias++) {
+
+            if (comida <= 0 || energia <= 0 || agua <= 0) {
+                break;
+            }
+
+            System.out.println("============================");
+            System.out.println("DIA " + (dias + 1));
+            System.out.println("============================");
+
+            System.out.println("Oro: " + oro);
+            System.out.println("Comida: " + comida);
+            System.out.println("Energia: " + energia);
+            System.out.println("Agua: " + agua);
+
+            System.out.println("\nElige que hacer:");
+            System.out.println("(1) Salir a explorar");
+            System.out.println("(2) Descansar");
+            System.out.println("(3) Racionar");
+            System.out.println("(4) Comprar (10 de oro)");
+
+            int decision = myObj.nextInt();
+
+            switch (decision) {
+
+                case 1:
+                    energia -= 20;
+                    comida -= 10;
+                    agua -= 10;
+
+                    System.out.println("Has salido a explorar.");
+
+                    // Probabilidad 1 entre 2
+                    int suerte = random.nextInt(2);
+
+                    if (suerte == 0) {
+                        oro += 15;
+                        System.out.println("Encontraste 15 de oro!");
+                    } else {
+                        System.out.println("No encontraste nada.");
+                    }
+
+                    break;
+
+                case 2:
+                    energia += 30;
+                    comida -= 10;
+                    agua -= 10;
+
+                    if (energia > 100) {
+                        energia = 100;
+                    }
+
+                    System.out.println("Has descansado.");
+                    System.out.println("Recuperaste energia.");
+
+                    break;
+
+                case 3:
+                    comida -= 5;
+                    energia -= 5;
+                    agua -= 5;
+
+                    System.out.println("Has racionado tus recursos.");
+
+                    break;
+
+                case 4:
+                    if (oro >= 10) {
+                        oro -= 10;
+                        comida += 20;
+                        agua += 20;
+
+                        if (comida > 100) {
+                            comida = 100;
+                        }
+
+                        if (agua > 100) {
+                            agua = 100;
+                        }
+
+                        System.out.println("Compraste comida y agua por 10 de oro.");
+                        --dias;
+                    } else {
+                        System.out.println("un judio te robo.");
+                    --dias;
+                    }
+                
+                    break;
+
+                default:
+                    System.out.println("Opcion no valida.");
+                    --dias;
+                    break;
+            }
+        }
+
+        System.out.println("============================");
+        System.out.println("FIN DEL JUEGO");
+        System.out.println("============================");
+
+        System.out.println("Oro: " + oro);
+        System.out.println("Comida: " + comida);
+        System.out.println("Energia: " + energia);
+        System.out.println("Agua: " + agua);
+
+        if (comida <= 0 || energia <= 0 || agua <= 0) {
+            System.out.println("No lograste sobrevivir.");
+        } else {
+            int puntaje = ((oro*2)+comida+agua+energia)/4;
+            System.out.println("Sobreviviste los 10 dias!");
+            System.out.println("Puntaje: " + puntaje);
+            System.out.println("Presiona (1) para jugar de nuevo, presiona cualquier otro numero para salir.");
+            int decisionfinal = myObj.nextInt();
+            if (decisionfinal == 1){
+              oro = 0;
+        comida = 100;
+        energia = 100;
+         agua = 100;
+           dias = 0;
+    
+            }else{ }
+        }
+
+        myObj.close();
+    }
+}
