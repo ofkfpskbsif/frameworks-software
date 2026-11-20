@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+class Main{
+
+public static void main(String[] args){
+
+int falladas=0;
+int vida =90;
+int correctas =0;
+
+  String[] preguntas = {"cuantos ojos de ender ocupa el portal del end?", "¿Como se llama el hermano de luigi?", "¿Como se llama el prota de halo?", "como se llama el personaje principal de red dead redemption 2?", "cuanto poder tiene gordoy en gordokai tenpochi ZERO?", "que espada usa zelda?", "Cual es el origen de TLOU?","Cuales son los nombres de los sobrevivientes de left for dead uno?"};
+
+String[][] respuestas ={ {},
+                         {},
+                         {},
+                         {},
+                         {},
+                         {},
+                         {},
+                         {},}
+  
+Scanner scanner = new Scanner(System.in);
+
+System.out.println("*****************************************************************************");
+System.out.println("*                         EXAMEN GAMER                                      *");         
+System.out.println("*****************************************************************************");
+
+
+System.out.println("Bienvenidos a este examen gamer!");
+System.out.println("A continuacion probaremos tus conocimientos gamers");         
+System.out.println("Tendras un indicador de vida inicial de 90, si llega a cero, se pierde la partida");
+         System.out.println("Buena suerte!");
+         System.out.println("Presiona 1 para continuar, presiona 0 para salir");
+
+ int decision=scanner.nextInt();
+
+  switch (decision){
+    
+    case 0:
+      System.exit(0);
+    
+    case 1:  
+      break;
+ default:
+      System.out.println("Ponte pilas, no andes poniendo cosas que ni al caso");
+        break;
+  }
+
+
+  
+        for (int k = 0; k<8; k++){
+System.out.println("Pregunta: " + (k+1));
+
+          
+                 
+        } 
+         
+         
+}
+}
