@@ -12,11 +12,12 @@ import java.util.Scanner;
     public static void main(String[] args) {
 
         int falladas = 0;
+        int falladasseg =0;
         int vida = 90;
         int correctas = 0;
         int prg = 0;
        String[] preguntas = {"Cuantos ojos de ender ocupa el portal del end?",
-            "Quien NO pertenece a un videojuego",
+            "Quien NO pertenece a un videojuego?",
             "Como se llama el protagonista de halo?",
             "como se llama el personaje principal de red dead redemption 2?",
             "Cuanto poder tiene cristof en sparking prietos?",
@@ -92,10 +93,15 @@ import java.util.Scanner;
                     if (decision == respuestacorrecta[k]) {
                         System.out.println("CORRECTO");
                         correctas++;
+                        falladasseg =0;
                     } else {
                         System.out.println("INCORRECTO");
-                        vida = vida - 20;
+                        vida = vida - 30;
                         falladas++;
+                        falladasseg++;
+                        if(falladasseg>1){
+                            vida=vida-10;
+                        }
                     }
                     break;
 
@@ -103,10 +109,15 @@ import java.util.Scanner;
                     if (decision == respuestacorrecta[k]) {
                         System.out.println("CORRECTO");
                         correctas++;
+                        falladasseg =0;
                     } else {
                         System.out.println("INCORRECTO");
-                        vida = vida - 20;
+                        vida = vida - 30;
                         falladas++;
+                        falladasseg++;
+                        if(falladasseg>1){
+                            vida=vida-10;
+                        }
                     }
                     break;
 
@@ -114,28 +125,43 @@ import java.util.Scanner;
                     if (decision == respuestacorrecta[k]) {
                         System.out.println("CORRECTO");
                         correctas++;
+                        falladasseg =0;
                     } else {
                         System.out.println("INCORRECTO");
-                        vida = vida - 20;
+                        vida = vida - 30;
                         falladas++;
+                        falladasseg++;
+                        if(falladasseg>1){
+                            vida=vida-10;
+                        }
                     }
                     break;
 
                 case 4:
-                    if (decision == respuestacorrecta[k]) {
+                     if (decision == respuestacorrecta[k]) {
                         System.out.println("CORRECTO");
                         correctas++;
+                        falladasseg =0;
                     } else {
                         System.out.println("INCORRECTO");
-                        vida = vida - 20;
+                        vida = vida - 30;
                         falladas++;
+                        falladasseg++;
+                        if(falladasseg>1){
+                            vida=vida-10;
+                        }
                     }
                     break;
 
                 default:
                     System.out.println("Ponte pilas, no andes poniendo cosas que ni al caso");
-                    vida = vida - 20;
-                    break;
+                      vida = vida - 30;
+                        falladas++;
+                        falladasseg++;
+                        if(falladasseg>1){
+                            vida=vida-10;
+                        }
+                     break;
             }
         }
 
